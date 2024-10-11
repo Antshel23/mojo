@@ -1,6 +1,8 @@
 const {db, DataTypes} = require('../db/config.js')
 
 let User = db.define('User', {
-    name: 'x'
+    id: DataTypes.INTEGER,
+    username: DataTypes.STRING
 })
+
 module.exports = User
