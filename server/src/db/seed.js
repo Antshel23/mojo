@@ -1,5 +1,5 @@
 const { db } = require('./config');
-const { User, Attack, Card, CardAttack } = require('../models'); // Import CardAttack if needed
+const { User, Attack, Card, CardAttack } = require('../models/index.js'); // Import CardAttack if needed
 
 function randInt(a, b) {
   return a + Math.floor(Math.random() * (b - a));
@@ -38,7 +38,6 @@ async function seed() {
 
   const createdCards = await Promise.all(cardPromises);
 
-  // Seed Attacks
   const attacks = await Attack.bulkCreate([
     { title: "Charge", mojoCost: 10, staminaCost: 15 },
     { title: "Thunderbolt", mojoCost: 20, staminaCost: 10 },
